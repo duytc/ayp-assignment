@@ -1,6 +1,6 @@
-# Lumen Skeleton
+# Project Skeleton
 
-This repository contains the Lumen skeleton which is run with Docker.
+This repository contains the project skeleton which is run with Docker.
 
 ## System Requirements
 
