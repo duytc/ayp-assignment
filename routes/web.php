@@ -1,6 +1,6 @@
 <?php
 
-/** @var \Laravel\Lumen\Routing\Router $router */
+/** @var Router $router */
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +13,13 @@
 |
 */
 
+use Laravel\Lumen\Routing\Router;
+
 $router->get('/', ['uses' => 'Controller@checkDbConnection']);
+
+//Worker
+$router->post('/worker', ['uses' => 'WorkerController@ajaxStore']);
+$router->get('/worker', ['uses' => 'WorkerController@ajaxList']);
+
+$router->post('/employment', ['uses' => 'EmploymentController@ajaxStore']);
+$router->patch('/employment', ['uses' => 'EmploymentController@ajaxUpdate']);
