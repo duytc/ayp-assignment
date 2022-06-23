@@ -29,10 +29,12 @@ class JsonResponse
      * @param array $headers
      * @return \Illuminate\Http\JsonResponse
      */
-    public static function error($error, $status = 400, array $headers = [])
+    public static function error($errorMessage, $errorName, $status = 400, array $headers = [])
     {
         $responseArray = [
-            'error'   => $error,
+            'code' => $status,
+            'name' => $errorName,
+            '$message'   => $errorMessage,
         ];
 
         return response()->json($responseArray, $status, $headers, JSON_UNESCAPED_SLASHES);

@@ -37,6 +37,6 @@ class WorkerController extends Controller
 
     public function ajaxList(Request $request)
     {
-        return JsonResponse::success($this->workerService->getAllWorker());
+        return JsonResponse::success(['workers' => $this->workerService->getAllWorker()]);
     }
 }
