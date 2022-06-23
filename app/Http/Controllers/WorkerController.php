@@ -35,6 +35,10 @@ class WorkerController extends Controller
         return JsonResponse::success(['id' => $this->workerService->store($request->all())->id]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function ajaxList(Request $request)
     {
         return JsonResponse::success(['workers' => $this->workerService->getAllWorker()]);

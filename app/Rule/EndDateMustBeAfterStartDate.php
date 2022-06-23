@@ -11,6 +11,10 @@ class EndDateMustBeAfterStartDate implements Rule
     private EmploymentService $employmentService;
     private $employmentId;
 
+    /**
+     * @param EmploymentService $employmentService
+     * @param $employmentId
+     */
     public function __construct(EmploymentService $employmentService, $employmentId)
     {
         $this->employmentService = $employmentService;

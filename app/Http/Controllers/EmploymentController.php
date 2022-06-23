@@ -12,10 +12,13 @@ use Illuminate\Validation\ValidationException;
 
 class EmploymentController extends Controller
 {
-
     private EmploymentService $employmentService;
     private WorkerService $workerService;
 
+    /**
+     * @param EmploymentService $employmentService
+     * @param WorkerService $workerService
+     */
     public function __construct(EmploymentService $employmentService, WorkerService $workerService)
     {
         $this->employmentService = $employmentService;
@@ -62,6 +65,4 @@ class EmploymentController extends Controller
             ['id' => $this->employmentService->updateEmployment($employmentId, $employmentData)->id]
         );
     }
-
-
 }
